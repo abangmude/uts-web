@@ -30,7 +30,7 @@
                     </div>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
-                            <th>ID</th>
+                            <th>ID.</th>
                             <th>Kode Barang</th>
                             <th>Nama Barang</th>
                             <th>Jumlah</th>
@@ -39,20 +39,20 @@
                             <th>Aksi</th>
                         </thead>
                         <tbody>
-                          @foreach($inventories as $inventory)
-                            <tr>
-                                <td>{{$inventory->id}}</a></td>
-                                <td>{{$inventory->code}}</a></td>
-                                <td>{{$inventory->name}}</td>
-                                <td>{{$inventory->qty}}</td>
-                                <td>{{$inventory->created_at}}</td>
-                                <td>{{$inventory->updated_at}}</td>
-                                <td>
-                                    <a href="/form?name={{$inventory->name}}&code={{$inventory->code}}&qty={{$inventory->qty}}&id={{$inventory->id}}"><button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
-                                    <a href="/delete?id={{$inventory->id}}"><button class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i> Delete</button></a>
-                                </td>
-                            </tr>
-                          @endforeach
+                        @foreach($inventories as $inventory)
+                        <tr>
+                            <td>{{$inventory->id}}</td>
+                            <td><a href="{{route('inventory.detail', [$inventory->id])}}">{{$inventory->code}}</a></td>
+                            <td>{{$inventory->name}}</td>
+                            <td>{{$inventory->qty}}</td>
+                            <td>{{$inventory->created_at}}</td>
+                            <td>{{$inventory->updated_at}}</td>
+                            <td>
+                                <a href="#"><button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</button></a>
+                                <a href="#"><button class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i> Delete</button></a>
+                            </td>
+                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
